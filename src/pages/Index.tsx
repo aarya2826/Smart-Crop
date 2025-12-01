@@ -8,6 +8,7 @@ import { OfflineReportsTab } from "@/components/OfflineReportsTab";
 import { OfficerDashboardTab } from "@/components/OfficerDashboardTab";
 import { Language, translations } from "@/lib/i18n";
 import { Sprout, Lightbulb, Bug, FileText, BarChart3 } from "lucide-react";
+import logo from "@/components/logo.png";
 
 const Index = () => {
   const [language, setLanguage] = useState<Language>('en');
@@ -17,10 +18,16 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Sprout className="h-8 w-8 text-primary" />
-            <h1 className="text-2xl font-bold text-foreground">{t.appName}</h1>
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt={t.appName}
+              className="h-10 w-10 rounded-md shadow-sm object-contain bg-primary/5"
+            />
+            <h1 className="text-2xl font-bold text-foreground tracking-tight">
+              {t.appName}
+            </h1>
           </div>
           <LanguageSwitcher currentLanguage={language} onLanguageChange={setLanguage} />
         </div>
